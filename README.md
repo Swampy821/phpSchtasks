@@ -31,3 +31,41 @@ Scheduled tasks Class to give a simulated Cron that can be controlled via php on
 ```php
 $taskArray = schTasks::queryTasks()->getAllTasks();
 ```
+
+####Query Ready Tasks
+```php
+$taskArray = schTasks::queryTasks()->getReadyTasks();
+```
+
+####Query all tasks within a folder
+```php
+$taskArray = schTasks::queryTasks()->getAllTasksInFolder("TaskFolder");
+```
+
+####Query single task.
+```php
+$taskArray = schTasks::queryTasks()->getTaskInfo("SingleTask");
+```
+
+
+###Creating Tasks
+```php
+$taskResponse = schTasks::createTask("taskFolder\taskName","runThisProgram.exe","DAILY","09:00","1/9/2014","12/9/2014");
+```
+
+
+###Modifying Tasks
+```php
+$taskResponse = schTasks::modifyTask("taskFolder\taskName","runThisNewProgram.exe","DAILY","10:00","1/9/2013","12/9/2014");
+```
+
+
+###Removing Tasks
+```php
+$taskResponse = schTasks::removeTask("taskFolder\taskName");
+```
+
+###Running Tasks
+```php
+$taskResponse = schTasks::runTask("taskFolder\taskName");
+```
