@@ -1,7 +1,7 @@
 phpSchtasks
 ===========
 
-Scheduled tasks API in php
+Scheduled tasks Class to give a simulated Cron that can be controlled via php on a windows server.
 
 
 
@@ -20,3 +20,14 @@ Scheduled tasks API in php
     </ul>
 </li>
 </ul>
+
+
+
+##Examples
+
+###Querying tasks.
+
+####Query All Tasks
+```php
+$taskArray = schTasks::queryTasks()->getAllTasks();
+```
