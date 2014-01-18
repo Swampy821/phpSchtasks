@@ -17,6 +17,7 @@ Scheduled tasks Class to give a simulated Cron that can be controlled via php on
         <li>getAllTasks</li>
         <li>getReadyTasks</li>
         <li>getAllTasksInFolder</li>
+        <li>getTaskCount</li>
     </ul>
 </li>
 </ul>
@@ -47,6 +48,10 @@ $taskArray = schTasks::queryTasks()->getAllTasksInFolder("TaskFolder");
 $taskArray = schTasks::queryTasks()->getTaskInfo("SingleTask");
 ```
 
+#####Count Tasks 
+```php
+$taskCount = schtasks::queryTasks()->getTaskCount('Optional Folder');
+```
 
 ###Creating Tasks
 ```php
