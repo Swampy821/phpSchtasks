@@ -88,6 +88,26 @@
             }
             return $taskArray;
         }
+        /**
+         * 
+         * @param String $folder
+         * @return Integer Count of tasks.
+         */
+        public function getTaskCount($folder=null) {
+            $taskArray = $this->taskArray;
+            if($folder==null) {
+                $count = count($taskArray);
+                return $count;
+            }else{
+                foreach($taskArray as $key=>$value) {
+                    if(!isset($value['folder']) || strtolower(ltrim($value['folder'], '\\')) != strtolower($folder)) {
+                        unset($taskArray[$key]);
+                    }
+                }
+                $count = count($taskArray);
+                return $count;
+            }
+        }
     }
     
     
