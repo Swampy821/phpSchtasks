@@ -81,7 +81,7 @@
             $taskArray = $this->taskArray;
             if($folder!=null) {
                 foreach($taskArray as $key=>$value) {
-                    if(strtolower(ltrim($value['folder'], '\\')) != strtolower($folder)) {
+                    if(!isset($value['folder']) || strtolower(ltrim($value['folder'], '\\')) != strtolower($folder)) {
                         unset($taskArray[$key]);
                     }
                 }
